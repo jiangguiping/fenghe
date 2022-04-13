@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiang.mapper.GoodsCategoryMapper">
+    <resultMap id="BaseResultMap" type="com.jiang.entity.GoodsCategory">
+        <id column="category_id" jdbcType="BIGINT" property="categoryId"/>
+        <result column="category_level" jdbcType="TINYINT" property="categoryLevel"/>
+        <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
+        <result column="category_name" jdbcType="VARCHAR" property="categoryName"/>
+        <result column="category_rank" jdbcType="INTEGER" property="categoryRank"/>
+        <result column="is_deleted" jdbcType="TINYINT" property="isDeleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_user" jdbcType="INTEGER" property="createUser"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="update_user" jdbcType="INTEGER" property="updateUser"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMap2" type="com.jiang.vo.IndexCategoryVO">
+        <id column="category_id" jdbcType="BIGINT" property="categoryId"/>
+        <result column="category_level" jdbcType="TINYINT" property="categoryLevel"/>
+        <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
+        <result column="category_name" jdbcType="VARCHAR" property="categoryName"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+    category_id, category_level, parent_id, category_name, category_rank, is_deleted, 
+    create_time, create_user, update_time, update_user
+  </sql>
+    <sql id="Base_Column_List2">
+        category_id, category_level, parent_id, category_name
+    </sql>
+
+    <select id="add" resultMap="BaseResultMap2">
+       select <include refid="Base_Column_List2"></include> from goods_category
+    </select>
+
+
+
+
+
+</mapper>
