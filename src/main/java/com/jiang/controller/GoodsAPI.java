@@ -66,5 +66,11 @@ public class GoodsAPI {
     public Result git() {
         return Result.succ("提交");
     }
+    //第三次提交
+    @GetMapping("/jiji")
+    public Result jiji() {
+        return Result.succ("提交");
+    }
+
 
 }
