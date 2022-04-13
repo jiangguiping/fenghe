@@ -62,4 +62,9 @@ public class GoodsAPI {
         return Result.succ(goods);
     }
 
+    @GetMapping("/git")
+    public Result git() {
+        return Result.succ("提交");
+    }
+
 }
